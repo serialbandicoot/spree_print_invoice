@@ -1,17 +1,16 @@
 if @hide_prices
-  @column_widths = { 0 => 100, 1 => 165, 2 => 75, 3 => 75 } 
-  @align = { 0 => :left, 1 => :left, 2 => :right, 3 => :right }
+  @column_widths = { 0 => 75, 1 => 220, 2 => 75, 3 => 75 }
+  @align = { 0 => :left, 1 => :left, 2 => :left, 3 => :right }
 else
-  @column_widths = { 0 => 75, 1 => 205, 2 => 75, 3 => 50, 4 => 75, 5 => 60 } 
-  @align = { 0 => :left, 1 => :left, 2 => :left, 3 => :right, 4 => :right, 5 => :right}
+  @column_widths = { 0 => 75, 1 => 265, 2 => 75, 3 => 50, 4 => 75 }
+  @align = { 0 => :left, 1 => :left, 2 => :left, 3 => :left, 4 => :right}
 end
 
 # Line Items
-bounding_box [0,cursor], :width => 540, :height => 430 do
+bounding_box [0,cursor], :width => 540, :height => 290 do
   move_down 2
   header =  [Prawn::Table::Cell.new( :text => t(:sku), :font_style => :bold),
                 Prawn::Table::Cell.new( :text => t(:item_description), :font_style => :bold ) ]
-  header <<  Prawn::Table::Cell.new( :text => t(:options), :font_style => :bold ) 
   header <<  Prawn::Table::Cell.new( :text => t(:price), :font_style => :bold ) unless @hide_prices
   header <<  Prawn::Table::Cell.new( :text => t(:qty), :font_style => :bold, :align => 1 )
   header <<  Prawn::Table::Cell.new( :text => t(:total), :font_style => :bold ) unless @hide_prices
@@ -32,7 +31,6 @@ bounding_box [0,cursor], :width => 540, :height => 430 do
     content = []
     @order.line_items.each do |item|
       row = [ item.variant.product.sku, item.variant.product.name]
-      row << variant_options(item.variant)
       row << number_to_currency(item.price) unless @hide_prices
       row << item.quantity
       row << number_to_currency(item.price * item.quantity) unless @hide_prices
