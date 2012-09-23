@@ -40,14 +40,14 @@ text "Returns", :align => :left
 font "Helvetica",  :size => 10
 text "We are sure you will be happy with your order, however if you are not completely satisfied with your purchase you may return your order back to us within 28 days of the date of despatch.", :align => :left
 move_down 4
-text "If any of your items arrive damage or broken we must be notified of this within 48 hours or receipt so we can arrange a replacement or refund. We are unable to replace or refund any items reported damaged after this time."
+text "If any of your items arrive damage or broken we must be notified of this within 48 hours of receipt so we can arrange a replacement or refund. We are unable to replace or refund any items reported damaged after this time."
 
 font "Helvetica",  :size => 11,  :style => :bold
 move_down 4
 text "Exchanges"
 
 font "Helvetica",  :size => 10
-text "If you would like to exchange your order for an alternative please notify us as soon as possible so we can ensure we have your replacement put by for you to avoid disappointment. Please note exchanges will need to processed within 14 days of despatch"
+text "If you would like to exchange your order for an alternative please notify us as soon as possible so we can ensure we have your replacement put by for you to avoid disappointment. Please note exchanges will need to be processed within 14 days of despatch"
 
 font "Helvetica",  :size => 11,  :style => :bold
 move_down 4

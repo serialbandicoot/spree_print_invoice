@@ -15,7 +15,7 @@ bounding_box [0,600], :width => 540 do
     :border_width => 0.5,
     :vertical_padding   => 2,
     :horizontal_padding => 6,
-    :font_size => 9,
+    :font_size => 13,
     :border_style => :underline_header,
     :column_widths => { 0 => 270, 1 => 270 }
 
@@ -44,7 +44,7 @@ bounding_box [0,600], :width => 540 do
       :border_width => 0.0,
       :vertical_padding   => 0,
       :horizontal_padding => 6,
-      :font_size => 9,
+      :font_size => 12,
       :column_widths => { 0 => 270, 1 => 270 }
   end
 
