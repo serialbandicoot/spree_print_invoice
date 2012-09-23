@@ -3,7 +3,7 @@ require 'prawn/layout'
 font "Helvetica"
 im = "#{Rails.root.to_s}/public/assets/#{Spree::PrintInvoice::Config[:print_invoice_logo_path]}"
 
-image im , :at => [0,720] #, :scale => 0.35
+image im , :at => [0,750] #, :scale => 2.0
 
 fill_color "E99323"
 if @hide_prices
@@ -20,8 +20,7 @@ text "#{I18n.t(:order_number)} #{@order.number}", :align => :right
 
 move_down 2
 font "Helvetica", :size => 9
-text "#{I18n.l @order.completed_at.to_date}", :align => :right
-
+text "#{@order.completed_at.strftime('%d-%B-%Y')}", :align => :right
 
 render :partial => "address"
 
@@ -33,3 +32,9 @@ move_down 8
 
 # Footer
 # render :partial => "footer"
+
+move_down 4
+text "Lily and Max Limited", :align => :left
+text "42 Kempthorne Lane, Bath, BA2 5DX", :align => :left
+text "Invoice Date: #{Time.now.strftime('%d-%B-%Y')}", :align => :left
+text "Telephone:    07900345398"
