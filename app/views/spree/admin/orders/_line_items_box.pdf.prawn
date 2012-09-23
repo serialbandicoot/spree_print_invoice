@@ -7,7 +7,7 @@ else
 end
 
 # Line Items
-bounding_box [0,cursor], :width => 540, :height => 290 do
+bounding_box [0,cursor], :width => 540, :height => 320 do
   move_down 2
   header =  [Prawn::Table::Cell.new( :text => t(:sku), :font_style => :bold),
                 Prawn::Table::Cell.new( :text => t(:item_description), :font_style => :bold ) ]

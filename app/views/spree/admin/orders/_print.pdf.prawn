@@ -61,5 +61,3 @@ font "Helvetica", :size => 9
 move_down 4
 text "Lily and Max Limited", :align => :left
 text "42 Kempthorne Lane, Bath, BA2 5DX", :align => :left
-text "Invoice Date: #{Time.now.strftime('%d-%B-%Y')}", :align => :left
-text "Telephone:    07900345398"

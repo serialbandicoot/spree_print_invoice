@@ -31,11 +31,12 @@ bounding_box [0,600], :width => 540 do
             [ship_address.address1, bill_address.address1]]
       data2 << [ship_address.address2, bill_address.address2] unless
                 ship_address.address2.blank? and bill_address.address2.blank?
-      data2 << ["#{@order.ship_address.zipcode} #{@order.ship_address.city}  #{(@order.ship_address.state ? @order.ship_address.state.abbr : "")} ",
-                       "#{@order.bill_address.zipcode} #{@order.bill_address.city} #{(@order.bill_address.state ? @order.bill_address.state.abbr : "")}"]
+      data2 << [@order.ship_address.city, @order.bill_address.city] unless
+                @order.ship_address.city.blank? and @order.bill_address.city.blank?
+      data2 << ["#{@order.ship_address.zipcode}  #{(@order.ship_address.state ? @order.ship_address.state.abbr : "")} ",
+                             "#{@order.bill_address.zipcode} #{(@order.bill_address.state ? @order.bill_address.state.abbr : "")}"]
+
       data2 << [ship_address.country.name, bill_address.country.name]
-      data2 << [ship_address.phone, bill_address.phone]
-      data2 << [@order.shipping_method.try(:name), @order.shipping_method.try(:name)]
     end
     
     table data2,
