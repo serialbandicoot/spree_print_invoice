@@ -59,4 +59,4 @@ text "If you have any questions about your order please feel welcome to contact 
 
 font "Helvetica", :size => 9
 move_down 4
-text "Lily and Max Limited, 42 Kempthorne Lane, Bath, BA2 5DX" :align => :left
+text "Lily and Max Limited, 42 Kempthorne Lane, Bath, BA2 5DX", :align => :left
